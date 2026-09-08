@@ -10,9 +10,10 @@ void scale(int x, int y) {
     fill(c, c+20, 255); 
   }
   
-  stroke(255, 255, 255); 
-  triangle(x, y, x-15, y+25, x+15, y+25); 
-  triangle(x-15, y+25, x, y+50, x+15, y+25); 
+  noStroke(); 
+  bezier(x, y, x-15, y+25, x, y, x+15, y+25);
+  bezier(x-15, y+25, x, y+50, x-15, y+25, x+15, y+25);
+  bezier(x+10, y+10, x+0, y+15, x+0, y+25, x+10, y+30); 
   
 } 
 
@@ -22,7 +23,7 @@ void setup() {
 } 
 
 void draw() {
-  
+ 
   for (int i = 0; i < 420; i += 10) {
     for (int j = 0; j < 415; j += 15) {
         scale(i, j); 
